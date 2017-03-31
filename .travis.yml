@@ -1,0 +1,17 @@
+language: c
+
+#env:
+
+before_install:
+        - sudo apt-get install sed make binutils build-essential bash patch gzip bzip2 perl tar cpio python unzip rsync libtool autotools-dev automake
+
+#install:
+
+script:
+        - make BR2_GATEWAY_HARDWARE=configs/raspberrypi2_defconfig knot_gateway
+        - make
+
+# notifications:
+#         email:
+#                 on_success: change
+#                 on_failure: change
